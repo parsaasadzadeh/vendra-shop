@@ -74,27 +74,18 @@ export default async function HomePage() {
             </ul>
           </div>
 
-       <div className="hero-art" aria-hidden={hero.length === 0}>
-  {hero.length > 0 ? (
-    hero.map((p, i) => (
-      <Link key={p.id} href={productPath(p)} className={`hero-card hc-${i + 1}`} aria-label={p.title}>
-        <Image src={p.images[0]} alt={p.title} fill sizes="(max-width: 900px) 40vw, 22vw" priority={i === 0} />
-        <span className="hero-tag">{toman(p.finalPrice)} تومان</span>
-      </Link>
-    ))
-  ) : (
-    <div className="hero-figure">
-      <div className="hero-orb" aria-hidden="true" />
-      <Image
-        src="/vendrashop.png"
-        alt="Vendra Shop"
-        fill
-        priority
-        sizes="(max-width: 900px) 460px, 36vw"
-        className="hero-character"
-      />
-    </div>
-  )}
+      <div className="hero-art" aria-hidden="true">
+  <div className="hero-figure">
+    <div className="hero-orb" />
+    <Image
+      src="/vendrashop.png"
+      alt=""
+      fill
+      priority
+      sizes="(max-width: 900px) 460px, 36vw"
+      className="hero-character"
+    />
+  </div>
 </div>
         </div>
       </section>
