@@ -1,0 +1,165 @@
+/* ============ پنل مدیریت وندرا ============ */
+.only-mobile-flex { display: none !important; }
+
+.adm-boot { min-height: 100vh; display: grid; place-items: center; }
+.adm-auth { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; background: radial-gradient(900px 400px at 50% -10%, var(--accent-soft), transparent), var(--bg); }
+.adm-login { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow); }
+.adm-login-logo { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; margin-bottom: 4px; }
+.adm-login-logo h1 { font-size: 21px; margin-top: 8px; }
+
+/* ----- چیدمان ----- */
+.adm { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-height: 100vh; }
+.adm-side { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 18px; padding: 18px 14px; background: var(--surface); border-inline-end: 1px solid var(--border); z-index: 60; }
+.adm-side-head { display: flex; align-items: center; justify-content: space-between; padding-inline: 6px; }
+.adm-nav { display: flex; flex-direction: column; gap: 4px; }
+.adm-nav a { display: flex; align-items: center; gap: 12px; padding: 11px 14px; border-radius: 12px; font-weight: 700; font-size: 14px; color: var(--muted); transition: background 0.2s, color 0.2s; }
+.adm-nav a:hover { background: var(--surface-2); color: var(--text); }
+.adm-nav a.active { background: var(--accent-soft); color: var(--accent); }
+.adm-side-foot { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+.adm-me { display: flex; flex-direction: column; padding-inline: 6px; line-height: 1.5; }
+.adm-main { min-width: 0; display: flex; flex-direction: column; }
+.adm-top { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; gap: 8px; padding: 10px clamp(16px, 3vw, 32px); background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+.adm-content { width: 100%; max-width: 1100px; padding: clamp(18px, 3vw, 32px); padding-bottom: 120px; }
+
+.adm-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.adm-head h1 { font-size: clamp(22px, 3.4vw, 30px); }
+.adm-head-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.adm-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 10px; }
+.adm-back:hover { color: var(--accent); }
+.adm-link { font-weight: 700; }
+.adm-link:hover { color: var(--accent); }
+.adm-narrow { max-width: 480px; }
+.adm-stack { display: flex; flex-direction: column; gap: 14px; }
+.adm-inline { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.adm-inline input:not(.adm-color) { flex: 1; min-width: 0; }
+.adm-panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.adm-panel-head h2 { margin: 0; }
+.panel + .panel, .adm-form > .panel + .panel { margin-top: 16px; }
+.adm-form > .panel { margin-bottom: 16px; }
+
+/* ----- آمار ----- */
+.adm-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.adm-stat { display: flex; flex-direction: column; gap: 2px; padding: 16px 18px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); transition: border-color 0.2s, transform 0.15s; }
+.adm-stat:hover { border-color: var(--accent); transform: translateY(-2px); }
+.adm-stat-label { font-size: 13px; font-weight: 700; color: var(--muted); }
+.adm-stat-value { font-size: 30px; line-height: 1.3; }
+.adm-stat.tone-warn { border-color: color-mix(in srgb, var(--warn) 45%, var(--border)); background: color-mix(in srgb, var(--warn) 7%, var(--surface)); }
+.adm-stat.tone-danger { border-color: color-mix(in srgb, var(--danger) 45%, var(--border)); background: color-mix(in srgb, var(--danger) 7%, var(--surface)); }
+
+/* ----- لیست‌ها ----- */
+.adm-filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 14px 0; }
+.adm-search { flex: 1; min-width: 220px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border: 1.5px solid var(--border); border-radius: 999px; background: var(--surface); }
+.adm-search input { border: 0 !important; box-shadow: none !important; background: transparent; min-height: 44px; padding: 0; flex: 1; }
+.adm-filters .select-wrap { width: 190px; }
+.adm-rows { display: flex; flex-direction: column; }
+.adm-rows.panel { padding: 6px clamp(10px, 2vw, 18px); }
+.adm-rows > li { border-bottom: 1px solid var(--border); }
+.adm-rows > li:last-child { border-bottom: 0; }
+.adm-row { display: flex; align-items: center; gap: 14px; padding: 14px 4px; }
+a.adm-row:hover .grow b:first-child { color: var(--accent); }
+.adm-row-end { display: flex; flex-direction: column; align-items: flex-end; min-width: 110px; font-size: 14px; }
+.adm-badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.adm-row-actions { display: flex; gap: 2px; }
+.adm-prow-main { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+.adm-ptitle { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.adm-thumb { position: relative; width: 56px; height: 70px; border-radius: 12px; overflow: hidden; background: var(--surface-2); flex-shrink: 0; display: grid; place-items: center; font-weight: 800; color: var(--muted); }
+.adm-skel { display: flex; flex-direction: column; gap: 10px; }
+
+/* ----- جزئیات سفارش ----- */
+.adm-two { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.adm-col { display: flex; flex-direction: column; gap: 16px; }
+.adm-col .panel { margin: 0; }
+.adm-items li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.adm-items .mini-img { position: relative; }
+.adm-variant { display: flex; gap: 10px; flex-wrap: wrap; }
+.adm-item-price { display: flex; flex-direction: column; align-items: flex-end; font-size: 14px; }
+.adm-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ----- فرم محصول ----- */
+.adm-toggles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; margin-top: 8px; border-top: 1px solid var(--border); }
+.adm-toggle { padding-block: 14px; }
+.adm-imgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-bottom: 12px; }
+.adm-img { position: relative; aspect-ratio: 3/4; border-radius: 14px; overflow: hidden; background: var(--surface-2); border: 1px solid var(--border); }
+.adm-img img { width: 100%; height: 100%; object-fit: cover; }
+.adm-img-x { position: absolute; top: 6px; inset-inline-start: 6px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: rgba(23, 20, 31, 0.78); color: #fff; z-index: 2; }
+.adm-img-x:hover:not(:disabled) { background: var(--danger); }
+.adm-img-main { position: absolute; bottom: 6px; inset-inline-start: 6px; padding: 1px 9px; border-radius: 99px; font-size: 11px; font-weight: 800; background: var(--accent); color: var(--on-accent); z-index: 2; }
+.adm-img-size { position: absolute; bottom: 6px; inset-inline-end: 6px; padding: 1px 8px; border-radius: 99px; font-size: 10.5px; background: rgba(23, 20, 31, 0.7); color: #fff; z-index: 2; }
+.adm-img-move { position: absolute; top: 6px; inset-inline-end: 6px; display: flex; gap: 4px; z-index: 2; }
+.adm-img-move button { width: 26px; height: 26px; border-radius: 50%; background: rgba(255, 255, 255, 0.9); color: #17141f; font-weight: 800; line-height: 1; }
+.adm-img-move button:disabled { opacity: 0.35; }
+.adm-drop { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 22px 16px; border: 2px dashed var(--border); border-radius: 18px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; color: var(--muted); }
+.adm-drop:hover:not(.is-disabled) { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.adm-drop.is-disabled { opacity: 0.5; cursor: not-allowed; }
+.adm-drop input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.adm-color { width: 44px; min-width: 44px; height: 44px; padding: 3px; border-radius: 12px; cursor: pointer; }
+
+/* ----- سایز و رنگ ----- */
+.adm-gen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 16px; border-radius: 18px; background: var(--surface-2); margin-bottom: 18px; }
+.adm-gen-block h4 { font-size: 14px; margin-bottom: 10px; }
+.adm-presets { margin-bottom: 8px; }
+.adm-vlist { display: flex; flex-direction: column; gap: 8px; }
+.adm-vtitle { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.adm-vtitle h4 { font-size: 15px; }
+.adm-vhead, .adm-vrow { display: grid; grid-template-columns: 0.8fr 1.6fr 1.1fr 0.8fr auto; gap: 8px; align-items: center; }
+.adm-vhead { padding-inline: 4px; font-size: 12px; font-weight: 700; color: var(--muted); }
+.adm-vrow { padding: 6px; border-radius: 14px; border: 1px solid transparent; }
+.adm-vrow:hover { background: var(--surface-2); }
+.adm-vrow.is-dirty { border-color: var(--accent); background: var(--accent-soft); }
+.adm-vrow input:not([type="color"]) { min-height: 42px; padding: 6px 10px; width: 100%; }
+.adm-vcell { display: block; min-width: 0; }
+.adm-v-color { display: flex; gap: 6px; align-items: center; }
+.adm-v-color .adm-color { width: 42px; min-width: 42px; height: 42px; }
+.adm-v-actions { display: flex; gap: 4px; align-items: center; justify-content: flex-end; }
+.adm-v-del { color: var(--muted); }
+.adm-v-del:hover:not(:disabled) { color: var(--danger); }
+.adm-single { margin-top: 8px; }
+.adm-single summary { cursor: pointer; font-weight: 700; font-size: 13.5px; color: var(--accent); padding: 8px 0; }
+
+/* ----- نوار ذخیره ----- */
+.adm-savebar { position: sticky; bottom: 0; z-index: 30; margin-top: 8px; padding: 12px 0; background: linear-gradient(to top, var(--bg) 70%, transparent); }
+.adm-savebar-in { display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow-sm); }
+.adm-savebar-in > span { margin-inline-end: auto; }
+.adm-variants-panel { margin-top: 12px; }
+
+/* ----- پنجره‌ی ورود مجدد ----- */
+.adm-modal-wrap { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 16px; background: rgba(15, 13, 20, 0.6); backdrop-filter: blur(4px); }
+.adm-modal { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 22px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); animation: rise 0.3s ease both; }
+.adm-modal h2 { font-size: 19px; }
+.adm-modal-actions { display: flex; gap: 8px; }
+.adm-modal-actions .btn-primary { flex: 1; }
+
+/* ----- ریسپانسیو ----- */
+@media (max-width: 960px) {
+  .only-mobile-flex { display: inline-grid !important; }
+  .adm { grid-template-columns: minmax(0, 1fr); }
+  .adm-side { position: fixed; inset-block: 0; inset-inline-start: 0; width: 280px; max-width: 86vw; transform: translateX(100%); transition: transform 0.3s ease; box-shadow: var(--shadow); }
+  .adm-side.open { transform: none; }
+  .adm-two { grid-template-columns: minmax(0, 1fr); }
+  .adm-gen { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .adm-stats { grid-template-columns: minmax(0, 1fr); }
+  .adm-row { flex-wrap: wrap; }
+  .adm-row-end { align-items: flex-start; }
+  .adm-prow { flex-wrap: wrap; }
+  .adm-prow-main { flex-basis: 100%; }
+  .adm-toggles { grid-template-columns: minmax(0, 1fr); }
+  .adm-vhead { display: none; }
+  .adm-vrow { grid-template-columns: 1fr 1fr; padding: 10px; border: 1px solid var(--border); margin-bottom: 4px; }
+  .adm-v-color { grid-column: 1 / -1; }
+  .adm-v-actions { grid-column: 1 / -1; justify-content: space-between; }
+  .adm-savebar-in { flex-wrap: wrap; }
+  .adm-savebar-in > span { flex-basis: 100%; }
+  .adm-filters .select-wrap { width: 100%; }
+}
+
+/* ----- تنظیمات ارسال ----- */
+.ship-preview { display: flex; align-items: center; gap: 14px; margin: 18px 0 12px; padding: 14px 16px; border-radius: 16px; background: var(--accent-soft); color: var(--accent); }
+.ship-preview div { display: flex; flex-direction: column; line-height: 1.6; }
+.ship-preview b { color: var(--text); font-size: 15px; }
+.adm-ship-strip { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; padding: 14px 18px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); }
+.adm-ship-strip > svg { color: var(--accent); flex: none; }
+.adm-ship-strip .grow { display: flex; flex-direction: column; line-height: 1.6; }
+.adm-ship-strip small { color: var(--muted); font-weight: 700; font-size: 12.5px; }
+.slug-preview { display: block; direction: ltr; unicode-bidi: isolate; text-align: left; font-size: 12.5px; color: var(--muted); word-break: break-all; }
